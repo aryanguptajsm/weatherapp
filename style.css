@@ -7,41 +7,62 @@ body {
     font-family: Arial, sans-serif;
     background-color: #121212;
     color: #333;
-     justify-content: center;
-     align-items: center;
-     flex-direction: column;
-        height: 100vh;
-display: flex;
-  
+     height: 100vh;
+
 }
 .main {
     max-width: 400px;
     padding: 15px;
     height: 400px;
-    background-color: rgb(4, 36, 37);
+    background-color: transparent;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     border-radius: 5%;
+    border: 1px solid #504c4c;
+    margin: 200px auto;
+}
+
+.main h1 {
+    text-align: center;
+    margin-bottom: 20px;
+    font-style: aria-label;
+    color: #fefefe;
+}
+.temp{
+    font-size: 70px;
+    font-weight: bold;
+    color: #fefefe;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+}
+.weather{
+    font-size: 28px;
+    font-style: italic;
+     color: #fefefe;
+}
+.main p {
+    margin-top: 20px;
+    font-size: 18px;
+    color: #fefefe;
 }
 .navbar {
     color: white;
     padding: 15px;
-    max-width: 1000px;
-    text-align: center;
+    max-width: 100%; 
+    justify-content: space-between;
+    display: flex;
     border-radius: 8px 8px 0 0;
     background-color: transparent;
-}
-.navbar h1 {
-    margin: 0;
-    font-size: 24px;
-    
+    border: 1px solid #312f2f;
 }
 .navbar input {
     margin-top: 10px;
     padding: 8px;
-    width: 85%;
-    border: none;
+    width: 30%;
+    font-size: 16px;
+    border: none ;
     border-radius: 10px 10px 10px 10px;
-    background-color: #02090c;
+    background-color: #0e0e0e;
     color: white;
 }
 .navbar input::placeholder {
@@ -59,33 +80,42 @@ display: flex;
 .navbar button:hover {
     background-color: #333;
 }   
-.content {
-    padding: 20px;
-    text-align: center;
+.search {
+    display: flex;
+    align-items: center;
+    gap: 10px;
 }
-.content h2 {
-    margin-bottom: 20px;
+.navbar p {
+    margin-top: 20px;
+    font-size: 28px;
 }
-.content p {
-    margin-bottom: 20px;
+.weather-info {
+    margin-top: 20px;
+    font-size: 28px;
 }
-.content a {
-    display: inline-block;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 4px;
-    background-color: #010506;
-    color: white;
-    text-decoration: none;
+.humidity{
+    font-size: 16px;
+     color: #fefefe;
+     gap: 10px;
+}
+
+.search i {
+    color: #bdbcbc;
+    font-size: 20px;
+    padding: 8px;
+    border-radius: 10px;
+    background-color: #0e0e0e;
     cursor: pointer;
+    width: 35px;
+    margin-top: 10px;
+
 }
-.content a:hover {
-    background-color: #333;
-}   
-
-
-@keyframes move {
-    0% { transform: translate(0, 0); }
-    50% { transform: translate(200px, 200px); }
-    100% { transform: translate(0, 0); }
+.search input {
+    padding: 8px;
+    width: 400px;
+    font-size: 16px;
+    border: none;
+    border-radius: 10px;
+    background-color: #0e0e0e;
+    color: white;
 }

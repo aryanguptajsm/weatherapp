@@ -18,10 +18,18 @@
     </nav>
     <div class="main">
         <h1><span id="cityName">London</span></h1>
-        <p>Weather: <span class="weather" id="weatherDescription">--</span></p>
+        <div class="weather-icon">
+            <img id="weatherIcon" src="" alt="Weather Icon">
+        </div>
         <p> <span class="temp" id="temperature">--</span></p>
-        <p>Humidity: <span class="humidity" id="humidityValue">--</span></p> 
-        <p> Wind Speed: <span class="wind-speed" id="windSpeedValue">--</span></p>
+         <div class="weather-description">
+            <p>Weather: <span id="weatherDescription">--</span></p>
+        </div>
+      <div class="humidity">
+            <p>Humidity: <span id="humidityValue">--</span></p>
+             <img src="images.png" alt="Wind Speed Icon"> <span id="windSpeedValue">--</span>
+        </div>
+     
     </div>
  
     <script src="script.js"></script>

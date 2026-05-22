@@ -12,7 +12,7 @@
     <h2>Weather App</h2>
     <div class="search">
         <input type="text" id="city" placeholder="Enter city name" >
-        <i class="fa-solid fa-magnifying-glass" onclick="document.getElementById('getWeatherButton').click()"></i>
+        <img src="images/search.png" alt="Search" class="search-icon" onclick="document.getElementById('getWeatherButton').click()">
     </div>
     <button id="getWeatherButton">Get Weather</button>
     </nav>
@@ -26,8 +26,14 @@
             <p>Weather: <span id="weatherDescription">--</span></p>
         </div>
       <div class="humidity">
-            <p>Humidity: <span id="humidityValue">--</span></p>
-           <img src="images/wind.png" alt="Wind Speed Icon"> <span id="windSpeedValue">--</span>
+            <div class="humidity-item">
+                <img src="images/humidity.png" alt="Humidity Icon" class="icon-small"> 
+                <p>Humidity: <span id="humidityValue">--</span></p>
+            </div>
+            <div class="wind-item">
+                <img src="images/wind.png" alt="Wind Speed Icon" class="icon-small">
+                <p>Wind: <span id="windSpeedValue">--</span></p>
+            </div>
         </div>
      
     </div>

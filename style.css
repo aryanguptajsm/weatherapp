@@ -24,19 +24,36 @@ body {
 }
 .main div {
     display: flex;
-    flex-direction: row;
-    width: 85%;
-     justify-content: space-between;
+    flex-direction: column;
+    width: 100%;
+    justify-content: flex-start;
+    gap: 10px;
 }
-.humidity span {
-    margin-top: 10px;
-    font-size: 16px;
-     color: #a4a4a4;
+.humidity {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    width: 100%;
 }
-.humidity p{
-    margin-top: 10px;
-    font-size: 10px;
-     color: #808080;
+.humidity-item, .wind-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.icon-small {
+    width: 32px;
+    height: 32px;
+    object-fit: contain;
+}
+.humidity p, .wind-item p {
+    margin: 0;
+    font-size: 14px;
+    color: #a4a4a4;
+}
+.humidity span, .wind-item span {
+    font-size: 14px;
+    color: #fefefe;
+    font-weight: bold;
 }
 .main h1 {
     text-align: center;
@@ -86,6 +103,22 @@ body {
 .navbar input::placeholder {
     color: #bdbcbc;    
 }
+.search {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.search-icon {
+    width: 24px;
+    height: 24px;
+    cursor: pointer;
+    margin-top: 10px;
+    opacity: 0.7;
+    transition: opacity 0.3s ease;
+}
+.search-icon:hover {
+    opacity: 1;
+}
 .navbar button {
     margin-top: 10px;
     padding: 8px 16px;
@@ -97,24 +130,23 @@ body {
 }
 .navbar button:hover {
     background-color: #333;
-}   
-.search {
+}
+.weather-description {
+    text-align: center;
+    font-size: 14px;
+    color: #a4a4a4;
+    text-transform: capitalize;
+}
+.weather-icon {
     display: flex;
-    align-items: center;
-    gap: 10px;
+    justify-content: center;
+    margin: 20px 0;
 }
-.navbar p {
-    margin-top: 20px;
-    font-size: 28px;
+#weatherIcon {
+    width: 120px;
+    height: 120px;
+    object-fit: contain;
 }
-.weather-info {
-    margin-top: 20px;
-    font-size: 28px;
-}
-.humidity{
-    font-size: 10px;
-     color: #fefefe;
-  
 }
 
 .search i {

@@ -2,6 +2,26 @@
 const button = document.getElementById("getWeatherButton");
 const cityInput = document.getElementById("city");
 
+function getWeatherIcon(weatherMain) {
+  const iconMap = {
+    'Clear': 'images/clear.png',
+    'Clouds': 'images/clouds.png',
+    'Rain': 'images/rain.png',
+    'Drizzle': 'images/drizzle.png',
+    'Snow': 'images/snow.png',
+    'Mist': 'images/mist.png',
+    'Smoke': 'images/mist.png',
+    'Haze': 'images/mist.png',
+    'Dust': 'images/mist.png',
+    'Fog': 'images/mist.png',
+    'Sand': 'images/mist.png',
+    'Ash': 'images/mist.png',
+    'Squall': 'images/wind.png',
+    'Tornado': 'images/wind.png'
+  };
+  return iconMap[weatherMain] || 'images/clear.png';
+}
+
 function updateWeatherDisplay(data) {
   const temperature = `${(data.main.temp - 273.15).toFixed(2)}°C`;
   document.getElementById("temperature").textContent = temperature;
@@ -10,10 +30,10 @@ function updateWeatherDisplay(data) {
   document.getElementById("windSpeedValue").textContent = `${data.wind.speed} m/s`;
   document.getElementById("cityName").textContent = data.name;
   
-  // Update weather icon
-  const iconCode = data.weather[0].icon;
-  const iconUrl = `https://openweathermap.org/img/wn/${iconCode}@4x.png`;
-  document.getElementById("weatherIcon").src = iconUrl;
+  // Update weather icon using local images
+  const weatherIcon = getWeatherIcon(data.weather[0].main);
+  document.getElementById("weatherIcon").src = weatherIcon;
+  document.getElementById("weatherIcon").alt = data.weather[0].description;
 }
 
 function fetchWeather(city) {

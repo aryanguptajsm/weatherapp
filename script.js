@@ -9,6 +9,11 @@ function updateWeatherDisplay(data) {
   document.getElementById("humidityValue").textContent = `${data.main.humidity}%`;
   document.getElementById("windSpeedValue").textContent = `${data.wind.speed} m/s`;
   document.getElementById("cityName").textContent = data.name;
+  
+  // Update weather icon
+  const iconCode = data.weather[0].icon;
+  const iconUrl = `https://openweathermap.org/img/wn/${iconCode}@4x.png`;
+  document.getElementById("weatherIcon").src = iconUrl;
 }
 
 function fetchWeather(city) {

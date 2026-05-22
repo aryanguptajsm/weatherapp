@@ -1,6 +1,7 @@
 
 const button = document.getElementById("getWeatherButton");
 const cityInput = document.getElementById("city");
+let defaultCity = "Delhi";
 
 function getWeatherIcon(weatherMain) {
   const iconMap = {
@@ -55,5 +56,7 @@ cityInput.addEventListener("keydown", (e) => {
 });
 
 window.addEventListener("DOMContentLoaded", () => {
-  fetchWeather("London");
+  fetchWeather("Delhi");
+  defaultCity = "Delhi";
+
 });

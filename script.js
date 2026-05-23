@@ -44,9 +44,42 @@ function fetchWeather(city) {
     .catch((error) => console.error("Error fetching weather data:", error));
 }
 
+// Function to get weather using user's real location
+function getUserLocationWeather() {
+  if (navigator.geolocation) {
+    navigator.geolocation.getCurrentPosition(
+      (position) => {
+        const lat = position.coords.latitude;
+        const lon = position.coords.longitude;
+        fetchWeatherByCoordinates(lat, lon);
+      },
+      (error) => {
+        console.error("Location permission denied or unavailable:", error.message);
+        alert("Location access denied. Using default city instead.");
+        fetchWeather(defaultCity);
+      }
+    );
+  } else {
+    alert("Geolocation is not supported by your browser.");
+    fetchWeather(defaultCity);
+  }
+}
+
+// Function to fetch weather using coordinates
+function fetchWeatherByCoordinates(lat, lon) {
+  fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=8edc48f3924abad516c6916169b7f11e`)
+    .then((response) => response.json())
+    .then((data) => updateWeatherDisplay(data))
+    .catch((error) => console.error("Error fetching weather data:", error));
+}
+
 button.addEventListener("click", () => {
-  const city = cityInput.value.trim() || defaultCity;
-  fetchWeather(city);
+  const city = cityInput.value.trim();
+  if (city) {
+    fetchWeather(city);
+  } else {
+    getUserLocationWeather();
+  }
 });
 
 cityInput.addEventListener("keydown", (e) => {
@@ -56,7 +89,5 @@ cityInput.addEventListener("keydown", (e) => {
 });
 
 window.addEventListener("DOMContentLoaded", () => {
-  fetchWeather("Delhi");
-  defaultCity = "Delhi";
-
+  getUserLocationWeather();
 });

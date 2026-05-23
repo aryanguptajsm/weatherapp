@@ -5,7 +5,9 @@ A responsive and interactive weather application that provides real-time weather
 ## Features
 
 - 🌍 Real-time weather data display
-- 📱 Fully responsive design
+- � Location-based weather using device geolocation
+- 🔔 Location permission request for accurate weather
+- �📱 Fully responsive design
 - 🎨 Clean and intuitive user interface
 - ⚡ Fast and lightweight
 
@@ -31,7 +33,13 @@ learning/
 1. Download or clone the project to your local machine
 2. Open `index.html` in your web browser
 3. The weather app will load and display information
-4. Enter a location to retrieve current weather data
+4. **To use your real location**: Click the weather button without entering a city (you'll be prompted to allow location access)
+5. **To search a specific city**: Enter a city name and click the weather button
+
+#### Location Permission
+When you click the button without entering a city, your browser will request permission to access your device location. This allows the app to fetch weather data for your exact location. You can:
+- **Allow** - The app will use your coordinates to get accurate weather
+- **Deny** - The app will fall back to showing weather for the default city (Delhi)
 
 ## Technologies Used
 

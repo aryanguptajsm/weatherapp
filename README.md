@@ -58,10 +58,10 @@ When you click the button without entering a city, your browser will request per
 
 ## Browser Compatibility
 
-- Chrome (latest)
-- Firefox (latest)
-- Safari (latest)
-- Edge (latest)
+- Chrome 
+- Firefox 
+- Safari 
+- Edge 
 
 ## Future Enhancements
 

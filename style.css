@@ -92,6 +92,19 @@ body {
     background-color: transparent;
     border: 1px solid #201f1f;
 }
+.favicon-size {
+  width: 32px;
+  height: 32px;
+  object-fit: cover; 
+}
+
+/* Optional: If you want it to be a circle instead of a square */
+.favicon-circle {
+  width: 32px;
+  height: 32px;
+  object-fit: cover;
+  border-radius: 50%; 
+}
 .navbar h2 {
     margin-top: 10px;
     font-size: 24px;
